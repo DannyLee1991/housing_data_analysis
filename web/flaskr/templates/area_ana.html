@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block page_content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/plot/area_ana.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/page_area_ana.js') }}"></script>
+
+<input id="ip_locate_a" type="hidden" value="{{locate_a}}"/>
+<input id="ip_locate_b" type="hidden" value="{{locate_b}}"/>
+
+{% if error %}
+<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+
+<div class="row">
+    <label>一级区域</label>
+    <div class="btn-group">
+        <button id="bt-locate-a" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">
+            全部 <span class="caret"></span>
+        </button>
+        <ul id="ul-locate-a" class="dropdown-menu">
+        </ul>
+    </div>
+
+
+    <label>二级区域</label>
+    <div class="btn-group">
+        <button id="bt-locate-b" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">
+            全部 <span class="caret"></span>
+        </button>
+        <ul id="ul-locate-b" class="dropdown-menu">
+        </ul>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 10px">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">面积分布（单位：㎡）</div>
+        <div class="panel-body">
+            <div id="plot_area_distribution">
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">总价分布（单位：万元）</div>
+        <div class="panel-body">
+            <div id="plot_price_distribution">
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">每平米价格分布（单位：元）</div>
+        <div class="panel-body">
+            <div id="plot_unit_price_distribution">
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">建造时间分布（单位：年）</div>
+        <div class="panel-body">
+            <div id="plot_build_time_distribution">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

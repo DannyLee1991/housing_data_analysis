@@ -1,0 +1,1 @@
+scp ./web/data/anjuke.sqlite ubuntu@118.25.87.40:remote_folder
