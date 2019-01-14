@@ -32,6 +32,6 @@ def plot_distribution_view():
         plot = sns.distplot(col)
         fig = plot.get_figure()
 
-        print("plot {what}".format(what=what))
+        # print("plot {what}".format(what=what))
 
         return make_view_response(fig)
