@@ -2,7 +2,7 @@ from housing_data_analysis.db.base import read_sql
 from tools.cache import cache
 
 
-@cache(use_mem=True)
+@cache(use_mem=True, use_file=False)
 def get_all_data(table_name="anjuke_sale_data"):
     r = read_sql("select * from {table}".format(table=table_name))
     return r
